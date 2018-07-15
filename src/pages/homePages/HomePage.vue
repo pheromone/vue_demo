@@ -1,13 +1,15 @@
 <template>
   <div>
     <div>首页</div>
-    <router-link to="/homePages/list">zou</router-link>
+    <home-header/>
   </div>
 </template>
 
 <script>
+import HomeHeader from './components/Header'
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  components: {HomeHeader}
 }
 </script>
 

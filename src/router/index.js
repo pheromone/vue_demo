@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '@/pages/homePages/Homepage'
-import List from '@/pages/homePages/list/List'
+import Mine from '@/pages/mine/Mine'
 
 Vue.use(Router)
 
@@ -14,8 +14,8 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'List',
-      component: List
+      name: 'Mine',
+      component: Mine
     }
   ]
 })
