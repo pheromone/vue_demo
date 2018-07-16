@@ -6,9 +6,11 @@ import router from './router'
 // 解决移动端点击300ms延迟
 import fastclick from 'fastclick'
 // 保证多个设备初始UI一样
-import './assets/styles/reset.css'
+import '@styles/reset.css'
 // 保证移动端1ox边框
-import './assets/styles/border.css'
+import '@styles/border.css'
+// 引入iconfont
+import '@styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastclick.attach(document.body)

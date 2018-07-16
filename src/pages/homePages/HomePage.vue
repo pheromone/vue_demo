@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>首页</div>
     <home-header/>
   </div>
 </template>
