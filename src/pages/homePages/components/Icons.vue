@@ -6,7 +6,7 @@
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" />
           </div>
-          <p class="icon-desc">热门景点</p>
+          <p class="icon-desc">{{item.title}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -21,39 +21,48 @@ export default {
       icons: [
         {
           id: '001',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '002',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '003',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '004',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '005',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '006',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '007',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '008',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         },
         {
           id: '009',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
+          title: '热门景点'
         }
       ]
     }
@@ -81,6 +90,7 @@ export default {
     overflow: hidden
     height :0
     padding-bottom :50%
+    margin-top :4px
     .icon
       position :relative
       overflow :hidden
@@ -109,5 +119,5 @@ export default {
         line-height : 22px
         color :$darkTextColor
         text-align :center
-         ellipsis()
+        ellipsis()
 </style>
