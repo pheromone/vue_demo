@@ -1,11 +1,15 @@
 <template>
   <div class='icons' >
-    <div class="icon" v-for="item of icons" :key="item.id">
-      <div class="icon-img">
-        <img class="icon-img-content" :src="item.imgUrl" />
-      </div>
-      <p class="icon-desc">热门景点</p>
-    </div>
+    <swiper>
+      <swiper-slide v-for="(page, index) of pages" :key="index">
+        <div class="icon" v-for="item of page" :key="item.id">
+          <div class="icon-img">
+            <img class="icon-img-content" :src="item.imgUrl" />
+          </div>
+          <p class="icon-desc">热门景点</p>
+        </div>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
@@ -46,8 +50,25 @@ export default {
         {
           id: '008',
           imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
+        },
+        {
+          id: '009',
+          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg'
         }
       ]
+    }
+  },
+  computed: {
+    pages () {
+      const pages = []
+      this.icons.forEach((item, index) => {
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
     }
   }
 }
@@ -55,6 +76,7 @@ export default {
 
 <style lang='stylus' scoped>
   @import "~@styles/variables.styl"
+  @import "~@styles/mixins.styl"
   .icons
     overflow: hidden
     height :0
@@ -87,5 +109,5 @@ export default {
         line-height : 22px
         color :$darkTextColor
         text-align :center
-
+         ellipsis()
 </style>
