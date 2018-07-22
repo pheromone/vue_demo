@@ -60,7 +60,6 @@ export default {
 <style lang="stylus" scoped>
   @import "~@styles/mixins.styl"
   .recommend-title
-    margin-top :4px
     line-height :32px
     background :#eee
     text-indent :4px
