@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '@/pages/homePages/Homepage'
-import Mine from '@/pages/mine/Mine'
+import City from '@/pages/city/City'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
       component: HomePage
     },
     {
-      path: '/',
-      name: 'Mine',
-      component: Mine
+      path: '/city',
+      name: 'City',
+      component: City
     }
   ]
 })

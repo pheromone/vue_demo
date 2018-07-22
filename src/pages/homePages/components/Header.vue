@@ -7,10 +7,12 @@
       <span class="iconfont">&#xe632;</span>
         输入你想搜索的
     </div>
-    <div class="header-right">
-      {{this.city}}
-      <span class="iconfont arrow-icon">&#xe62d;</span>
-    </div>
+    <router-link to='/city'>
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont arrow-icon">&#xe62d;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -28,7 +30,7 @@ export default {
   @import "~@styles/variables.styl"
   .header
     display :flex
-    line-height :32px
+    line-height :$headerHeight
     background :$bgColor
     color :#fff
     .header-left
@@ -42,7 +44,7 @@ export default {
       flex: 1
       height: 30px
       line-height : 30px
-      margin-top :.6px
+      margin-top : 5px
       margin-left :6px
       padding-left :4px
       background : #fff
@@ -52,6 +54,7 @@ export default {
        width :80px
        float :right
        text-align:center
+       color :#fff
       .arrow-icon
        font-size :0.2rem
 </style>
