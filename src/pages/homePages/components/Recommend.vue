@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendData" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,29 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendData: [
-        {
-          id: '0001',
-          imgUrl: 'http://ww1.sinaimg.cn/large/0065oQSqly1fsvb1xduvaj30u013175p.jpg',
-          title: 'XXXXXXXXXXXXXXXXXX1',
-          desc: 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://ww1.sinaimg.cn/large/0065oQSqly1fsvb1xduvaj30u013175p.jpg',
-          title: 'XXXXXXXXXXXXXXXXXX2',
-          desc: 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://ww1.sinaimg.cn/large/0065oQSqly1fsvb1xduvaj30u013175p.jpg',
-          title: 'XXXXXXXXXXXXXXXXXX3',
-          desc: 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -69,7 +48,7 @@ export default {
           ellipsis()
       .item-desc
           line-height : 15px
-          color : #eee
+          color : #cacaca
           ellipsis()
       .item-button
           margin-top :4px

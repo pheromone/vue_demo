@@ -1,12 +1,12 @@
 <template>
   <div class='icons' >
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" />
           </div>
-          <p class="icon-desc">{{item.title}}</p>
+          <p class="icon-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -16,61 +16,20 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      icons: [
-        {
-          id: '001',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '002',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '003',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '004',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '005',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '006',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '007',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '008',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        },
-        {
-          id: '009',
-          imgUrl: 'https://ww1.sinaimg.cn/large/0065oQSqly1fsq9iq8ttrj30k80q9wi4.jpg',
-          title: '热门景点'
-        }
-      ]
+      swiperOption: {
+        autoPlay: false
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.icons.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
