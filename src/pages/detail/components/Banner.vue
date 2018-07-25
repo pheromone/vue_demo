@@ -1,19 +1,38 @@
 <template>
-  <div class="banner">
-    <img class="banner-img" src="https://ww1.sinaimg.cn/large/0065oQSqly1ftf1snjrjuj30se10r1kx.jpg" />
-    <div class="banner-info">
-      <div class="banner-title">XXXXXXXXXXXXXXX</div>
-      <div class="banner-number">
-        <span class="iconfont banner-icon">&#xe678;</span>
-        39
+  <div>
+    <div class="banner" @click="handleBannerClick">
+      <img class="banner-img" src="https://ww1.sinaimg.cn/large/0065oQSqly1ftf1snjrjuj30se10r1kx.jpg" />
+      <div class="banner-info">
+        <div class="banner-title">XXXXXXXXXXXXXXX</div>
+        <div class="banner-number">
+          <span class="iconfont banner-icon">&#xe678;</span>
+          39
+        </div>
       </div>
     </div>
+    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
   </div>
 </template>
 
 <script>
+import CommonGallary from 'common/gallary/Gallary'
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  data () {
+    return {
+      showGallary: false,
+      imgs: ['https://ww1.sinaimg.cn/large/0065oQSqly1ftf1snjrjuj30se10r1kx.jpg', 'https://ww1.sinaimg.cn/large/0065oQSqly1ftdtot8zd3j30ju0pt137.jpg']
+    }
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallary = true
+    },
+    handleGallaryClose () {
+      this.showGallary = false
+    }
+  },
+  components: {CommonGallary}
 }
 </script>
 
