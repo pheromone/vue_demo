@@ -16,6 +16,8 @@ import '@styles/border.css'
 import '@styles/iconfont.css'
 // 引入swiper的css
 import 'swiper/dist/css/swiper.css'
+// babel-polyfill
+import 'babel-polyfill'
 
 Vue.config.productionTip = false
 fastclick.attach(document.body)
